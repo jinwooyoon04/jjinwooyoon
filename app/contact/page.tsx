@@ -70,7 +70,7 @@ export default function ContactPage() {
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch {
       // For now, simulate success since we don't have a real API
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
@@ -112,7 +112,7 @@ export default function ContactPage() {
           <CardHeader>
             <CardTitle>Contact Form</CardTitle>
             <CardDescription>
-              Fill out the form below and I'll get back to you as soon as
+              Fill out the form below and I&apos;ll get back to you as soon as
               possible.
             </CardDescription>
           </CardHeader>
@@ -217,7 +217,7 @@ export default function ContactPage() {
                   role="alert"
                 >
                   <CheckCircle2 className="h-5 w-5" />
-                  <p>Message sent successfully! I'll get back to you soon.</p>
+                  <p>Message sent successfully! I&apos;ll get back to you soon.</p>
                 </div>
               )}
 

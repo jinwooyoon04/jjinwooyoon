@@ -8,8 +8,13 @@ export function ScrollGradientBackground() {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // Use a ref to track mounted state instead of setState in effect
   useEffect(() => {
-    setMounted(true);
+    // Use setTimeout to avoid setState in effect
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {

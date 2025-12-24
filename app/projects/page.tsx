@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ProjectCard, Project } from "@/components/project-card";
+import { ProjectCard } from "@/components/project-card";
 import { projects, projectCategories, ProjectCategory } from "@/data/projects";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 export default function ProjectsPage() {
