@@ -1,14 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { SkillBadge } from "@/components/skill-badge";
+import { ImageSlideshow } from "@/components/image-slideshow";
 import { projects } from "@/data/projects";
 
 const featuredProjects = projects.slice(0, 3);
+
+// Robot images for slideshow - add your image paths here
+const robotImages = [
+  {
+    src: "/spinup_robot.jpg",
+    alt: "VEX Robotics Competition Robot - Team 6627A with Amaze Award",
+  },
+  // Add more images here as you upload them:
+  // {
+  //   src: "/robot-image-2.jpg",
+  //   alt: "Description of second image",
+  // },
+];
 
 const skills = [
   "Python",
@@ -86,7 +99,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Robot Image */}
+            {/* Robot Image Slideshow */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -97,18 +110,12 @@ export default function Home() {
               }}
               className="relative"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border bg-muted/50 shadow-lg">
-                <Image
-                  src="/spinup_robot.jpg"
-                  alt="VEX Robotics Competition Robot - Team 6627A with Amaze Award"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                {/* Subtle overlay gradient for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
-              </div>
+              <ImageSlideshow
+                images={robotImages}
+                autoPlay={robotImages.length > 1}
+                autoPlayInterval={5000}
+                showControls={robotImages.length > 1}
+              />
               {/* Decorative badge */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}

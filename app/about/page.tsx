@@ -84,7 +84,7 @@ const experience = [
 
 const activities = [
   {
-    title: "EBoard, Social Media Chair",
+    title: "Executive Board, Social Media Chair",
     organization: "Cornell Society of Asian Scientists and Engineers (SASE)",
     period: "2025 - 2026",
     description:
@@ -123,7 +123,7 @@ const skills = [
   "Competitive Robotics",
 ];
 
-const bio = `I'm Jay Jinwoo Yoon, an Electrical & Computer Engineering student at Cornell University with a passion for robotics, engineering, and mentorship. With over 6 years of competitive VEX Robotics experience, including winning the 2023 VEX Worlds Championships Opportunity Division 1st Place, I've developed expertise in robot design, programming, and team leadership. I'm actively involved in Cornell SASE as Social Media Chair, connecting STEM students with tech corporations, and I've mentored 100+ students in robotics programs. My skills span from 3D design (AutoDesk Inventor, Fusion 360) to video editing (Da Vinci Resolve) and Python programming. I'm dedicated to building innovative solutions and helping the next generation of engineers succeed.`;
+const bio = `I'm Jay Jinwoo Yoon, an Electrical & Computer Engineering student at Cornell University with a passion for robotics, engineering, and mentorship. With over 6 years of competitive VEX Robotics experience, including placing 1st in the 2023 VEX Worlds Championships Opportunity Division, I've developed expertise in robot design, programming, and team leadership. I'm actively involved in Cornell SASE as Social Media Chair, connecting STEM students with tech corporations, and I've mentored 100+ students in robotics programs. My skills span from 3D design (AutoDesk Inventor, Fusion 360) to video editing (Da Vinci Resolve) and Python programming. I'm dedicated to building innovative solutions and helping the next generation of engineers succeed.`;
 
 const containerVariants = {
   hidden: { opacity: 0 },
