@@ -11,14 +11,16 @@ export const projects: Project[] = [
     slug: "vex-worlds-championship",
     overview: "This project represents the culmination of years of competitive robotics experience, resulting in a championship victory at VEX Worlds 2023. As team captain, driver, and primary builder, I led Team 6627A to achieve 1st place in the Opportunity Division, competing against 80 international teams from around the world. The project involved comprehensive robot design, mechanical engineering, programming, and strategic competition planning.",
     problem: "The VEX Robotics Competition Spin Up game required a robot capable of multiple tasks: collecting and scoring discs, controlling rollers, and navigating the field efficiently. The challenge was designing a robot that could excel in all aspects of the game while remaining reliable under competitive pressure. Additionally, we needed to optimize our design for the specific constraints of the Opportunity Division competition format.",
-    solution: "I designed and built a robot featuring mecanum wheels for omnidirectional movement, allowing precise positioning and efficient field navigation. The robot incorporated a sophisticated intake system for rapid disc collection, a scoring mechanism optimized for accuracy, and a roller control system for game element manipulation. The design emphasized reliability, maintainability, and adaptability to different match scenarios. Strategic programming in Python enabled autonomous routines and driver-assist features that maximized our competitive performance.",
+    solution: "I designed and built a robot featuring Omnidirectional wheels for smooth lateral and longitudinal movement, allowing precise positioning and efficient field navigation. This design was enhanced by our custom tracking wheels that precisely measured the distance the robot would travel. This data was then used in our PID controls and odometry algorithms to perform flawless autonomous movements during matches, as well as the Skills Competition (measured on individual performance). The robot incorporated a sophisticated intake system for rapid disc collection, a scoring mechanism optimized for accuracy and speed, and a roller control system for game element manipulation. The design emphasized reliability, maintainability, and adaptability to different match scenarios. Strategic programming in C++ enabled autonomous routines and driver-assist features that maximized our competitive performance.",
     whatILearned: [
       "Advanced mechanical design principles for competitive robotics",
       "Integration of multiple subsystems (drive, intake, scoring, pneumatics)",
       "Strategic thinking and game analysis for competition optimization",
+      "Advanced PID controls and odometry algorithms for precise autonomous movement",
       "Team leadership and collaboration under high-pressure competition conditions",
       "Iterative design and rapid prototyping techniques",
       "Programming autonomous routines and driver control systems",
+      "Tracking wheels for precise autonomous movement",
     ],
   },
   {
