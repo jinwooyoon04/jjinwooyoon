@@ -13,6 +13,10 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   slug: string;
+  overview?: string;
+  problem?: string;
+  solution?: string;
+  whatILearned?: string[];
 }
 
 interface ProjectCardProps {
@@ -27,7 +31,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         <CardTitle className="group-hover:text-foreground/80 transition-colors">
           {project.title}
         </CardTitle>
-        <CardDescription className="line-clamp-2">
+        <CardDescription className="line-clamp-3">
           {project.description}
         </CardDescription>
       </CardHeader>

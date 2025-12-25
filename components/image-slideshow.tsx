@@ -11,6 +11,7 @@ interface ImageSlideshowProps {
   images: Array<{
     src: string;
     alt: string;
+    caption?: string;
   }>;
   autoPlay?: boolean;
   autoPlayInterval?: number;
@@ -230,6 +231,21 @@ export function ImageSlideshow({
           </div>
         )}
       </div>
+      {/* Caption */}
+      <AnimatePresence mode="wait">
+        {images[currentIndex].caption && (
+          <motion.p
+            key={`caption-${currentIndex}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+            className="mt-4 text-center text-sm text-muted-foreground"
+          >
+            {images[currentIndex].caption}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

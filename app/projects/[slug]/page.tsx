@@ -80,48 +80,46 @@ export default async function ProjectDetailPage({
         )}
 
         {/* Overview Section */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Overview</h2>
-          <Card>
-            <CardContent className="pt-6">
-              <p className="text-muted-foreground">
-                This project demonstrates practical application of engineering
-                principles in a real-world context. The implementation combines
-                theoretical knowledge with hands-on development to create a
-                functional solution.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        {project.overview && (
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">Overview</h2>
+            <Card>
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground whitespace-pre-line">
+                  {project.overview}
+                </p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
         {/* Problem Section */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Problem</h2>
-          <Card>
-            <CardContent className="pt-6">
-              <p className="text-muted-foreground">
-                The challenge addressed by this project involves creating an
-                efficient and reliable solution that meets specific performance
-                requirements while maintaining cost-effectiveness and
-                scalability.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        {project.problem && (
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">Problem</h2>
+            <Card>
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground whitespace-pre-line">
+                  {project.problem}
+                </p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
         {/* Solution Section */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Solution</h2>
-          <Card>
-            <CardContent className="pt-6">
-              <p className="text-muted-foreground">
-                The solution implements a well-designed architecture that
-                addresses the core requirements. Key design decisions were made
-                to optimize performance and ensure maintainability.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+        {project.solution && (
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">Solution</h2>
+            <Card>
+              <CardContent className="pt-6">
+                <p className="text-muted-foreground whitespace-pre-line">
+                  {project.solution}
+                </p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
         {/* Tech Stack Section */}
         <section className="mb-12">
@@ -144,29 +142,20 @@ export default async function ProjectDetailPage({
         )}
 
         {/* What I Learned Section */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">What I Learned</h2>
-          <Card>
-            <CardContent className="pt-6">
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>
-                  Gained deeper understanding of system design and
-                  implementation challenges
-                </li>
-                <li>
-                  Improved skills in debugging and optimization techniques
-                </li>
-                <li>
-                  Learned to balance trade-offs between performance, cost, and
-                  complexity
-                </li>
-                <li>
-                  Enhanced knowledge of best practices in the relevant domain
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
+        {project.whatILearned && project.whatILearned.length > 0 && (
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">What I Learned</h2>
+            <Card>
+              <CardContent className="pt-6">
+                <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
+                  {project.whatILearned.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </section>
+        )}
       </div>
     </div>
   );
