@@ -5,6 +5,7 @@ import { getProjectBySlug } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ProjectGallery } from "@/components/project-gallery";
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -179,6 +180,14 @@ export default async function ProjectDetailPage({
             </CardContent>
           </Card>
         </section>
+
+        {/* Project Gallery Section - Only for VEX Worlds Championship */}
+        {project.slug === "vex-worlds-championship" && (
+          <section className="mb-12">
+            <h2 className="mb-6 text-2xl font-semibold">Project Gallery</h2>
+            <ProjectGallery />
+          </section>
+        )}
       </div>
     </div>
   );

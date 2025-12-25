@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -26,27 +26,126 @@ export function ImageSlideshow({
   className,
 }: ImageSlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Minimum swipe distance (in pixels)
+  const minSwipeDistance = 50;
 
   useEffect(() => {
-    if (!autoPlay || images.length <= 1) return;
+    if (!autoPlay || images.length <= 1 || isDragging) return;
 
-    const interval = setInterval(() => {
+    autoPlayRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, autoPlayInterval);
 
-    return () => clearInterval(interval);
-  }, [autoPlay, autoPlayInterval, images.length]);
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [autoPlay, autoPlayInterval, images.length, isDragging]);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    // Pause autoplay briefly after manual navigation
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = null;
+    }
   };
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
+    // Pause autoplay briefly after manual navigation
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = null;
+    }
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    // Pause autoplay briefly after manual navigation
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = null;
+    }
+  };
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+    // Pause autoplay during swipe
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = null;
+    }
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      goToNext();
+    } else if (isRightSwipe) {
+      goToPrevious();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+    setIsDragging(false);
+  };
+
+  // Mouse drag support for desktop
+  const [mouseStart, setMouseStart] = useState<number | null>(null);
+  const [mouseEnd, setMouseEnd] = useState<number | null>(null);
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    setMouseEnd(null);
+    setMouseStart(e.clientX);
+    setIsDragging(true);
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = null;
+    }
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (mouseStart !== null) {
+      setMouseEnd(e.clientX);
+    }
+  };
+
+  const onMouseUp = () => {
+    if (mouseStart !== null && mouseEnd !== null) {
+      const distance = mouseStart - mouseEnd;
+      const isLeftSwipe = distance > minSwipeDistance;
+      const isRightSwipe = distance < -minSwipeDistance;
+
+      if (isLeftSwipe) {
+        goToNext();
+      } else if (isRightSwipe) {
+        goToPrevious();
+      }
+    }
+    setMouseStart(null);
+    setMouseEnd(null);
+    setIsDragging(false);
   };
 
   if (images.length === 0) {
@@ -55,7 +154,16 @@ export function ImageSlideshow({
 
   return (
     <div className={cn("relative w-full", className)}>
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border bg-muted/50 shadow-lg">
+      <div
+        className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border bg-muted/50 shadow-lg cursor-grab active:cursor-grabbing"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -69,9 +177,10 @@ export function ImageSlideshow({
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
               fill
-              className="object-cover object-center"
+              className="object-cover object-center select-none"
               priority={currentIndex === 0}
               sizes="(max-width: 768px) 100vw, 50vw"
+              draggable={false}
             />
             {/* Subtle overlay gradient for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
