@@ -187,9 +187,9 @@ export default function About() {
           <div className="space-y-6">
             {experience.map((item, index) => (
               <div key={index} className="border-l-2 border-foreground pl-6">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <h3 className="text-xl font-semibold">{item.organization}</h3>
                 <p className="mt-1 text-muted-foreground">
-                  {item.organization} • {item.period}
+                  {item.title} • {item.period}
                 </p>
                 <p className="mt-2 text-muted-foreground">{item.description}</p>
               </div>
@@ -205,9 +205,9 @@ export default function About() {
           <div className="space-y-6">
             {activities.map((item, index) => (
               <div key={index} className="border-l-2 border-foreground pl-6">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <h3 className="text-xl font-semibold">{item.organization}</h3>
                 <p className="mt-1 text-muted-foreground">
-                  {item.organization} • {item.period}
+                  {item.title} • {item.period}
                 </p>
                 <p className="mt-2 text-muted-foreground">{item.description}</p>
               </div>
