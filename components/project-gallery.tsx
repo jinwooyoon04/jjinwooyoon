@@ -10,40 +10,44 @@ const projectImages = [
     alt: "VEX Robotics Competition Robot - Team 6627A Championship Winning Robot",
   },
   {
-    src: "/robot_build_1.jpg",
-    alt: "Early build stage - Hand holding mechanical assembly with bearing and structural components",
+    src: "/IMG_1289.JPG",
+    alt: "Robot build process - Mechanical assembly and construction",
   },
   {
-    src: "/robot_mecanum_wheel.jpg",
-    alt: "Mecanum wheel assembly - Close-up of omni-directional wheel mechanism with rollers",
+    src: "/IMG_1293.jpg",
+    alt: "Mecanum wheel assembly - Omni-directional wheel mechanism detail",
   },
   {
-    src: "/robot_build_2.jpg",
-    alt: "Mid-build stage - Partially assembled robot structure with gears and structural beams",
+    src: "/IMG_1303.JPG",
+    alt: "Robot build stage - Structural components and assembly",
   },
   {
-    src: "/robot_pneumatic.jpg",
-    alt: "Advanced build - Complex robot assembly with pneumatic cylinders and mechanical systems",
+    src: "/IMG_1304.JPG",
+    alt: "Advanced robot build - Complex mechanical systems and pneumatics",
   },
   {
-    src: "/robot_competition_1.jpg",
-    alt: "Competition field - Completed robot on VEX Worlds competition field with game elements",
+    src: "/IMG_1348.jpg",
+    alt: "Competition robot - Completed robot on VEX Worlds field",
   },
   {
-    src: "/robot_team_photo.jpg",
-    alt: "Team photo - Team 6627A members with championship robot at VEX Worlds competition",
+    src: "/IMG_1385.jpg",
+    alt: "Team photo - Team 6627A with championship robot",
   },
   {
-    src: "/robot_workspace.jpg",
-    alt: "Workspace organization - Robot parts, tools, and components organized on workbench",
+    src: "/IMG_1666.JPG",
+    alt: "Workspace organization - Robot parts and tools",
   },
   {
-    src: "/robot_detail.jpg",
-    alt: "Robot detail - Close-up view of intricate mechanical components and wiring",
+    src: "/IMG_1668.JPG",
+    alt: "Robot detail - Close-up of mechanical components",
   },
   {
-    src: "/robot_competition_2.jpg",
-    alt: "Competition action - Robot in action on competition field during VEX Worlds",
+    src: "/IMG_4329.jpg",
+    alt: "Competition action - Robot during VEX Worlds competition",
+  },
+  {
+    src: "/IMG_4881.jpg",
+    alt: "Robot showcase - Additional competition and build photos",
   },
 ];
 

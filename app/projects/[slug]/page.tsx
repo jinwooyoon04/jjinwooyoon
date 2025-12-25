@@ -135,26 +135,13 @@ export default async function ProjectDetailPage({
           </div>
         </section>
 
-        {/* Screenshots Placeholder */}
-        <section className="mb-12">
-          <h2 className="mb-4 text-2xl font-semibold">Screenshots</h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            <Card>
-              <CardContent className="flex h-48 items-center justify-center pt-6">
-                <p className="text-sm text-muted-foreground">
-                  Screenshot placeholder
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex h-48 items-center justify-center pt-6">
-                <p className="text-sm text-muted-foreground">
-                  Screenshot placeholder
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        {/* Project Gallery Section - Only for VEX Worlds Championship */}
+        {project.slug === "vex-worlds-championship" && (
+          <section className="mb-12">
+            <h2 className="mb-6 text-2xl font-semibold">Project Gallery</h2>
+            <ProjectGallery />
+          </section>
+        )}
 
         {/* What I Learned Section */}
         <section className="mb-12">
@@ -180,14 +167,6 @@ export default async function ProjectDetailPage({
             </CardContent>
           </Card>
         </section>
-
-        {/* Project Gallery Section - Only for VEX Worlds Championship */}
-        {project.slug === "vex-worlds-championship" && (
-          <section className="mb-12">
-            <h2 className="mb-6 text-2xl font-semibold">Project Gallery</h2>
-            <ProjectGallery />
-          </section>
-        )}
       </div>
     </div>
   );
