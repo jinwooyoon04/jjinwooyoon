@@ -25,7 +25,7 @@ export function Nav() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-lg font-semibold transition-colors hover:text-foreground/80"
+          className="hidden sm:block text-lg font-semibold transition-colors hover:text-foreground/80"
           aria-label="Home"
         >
           Jay J. Yoon
