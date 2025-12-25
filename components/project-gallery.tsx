@@ -8,57 +8,57 @@ const projectImages = [
   {
     src: "/spinup_robot.jpg",
     alt: "VEX Robotics Competition Robot - Team 6627A Championship Winning Robot",
-    caption: "The completed championship-winning robot for VEX Worlds 2023, featuring mecanum wheels for omnidirectional movement and a sophisticated intake system.",
+    caption: "The completed championship-winning robot for VEX Worlds 2023 presenting the Amaze Award, featuring omni wheels for lateral and longitudinal movement and a sophisticated intake system.",
   },
   {
     src: "/IMG_1289.JPG",
     alt: "Robot build process - Mechanical assembly and construction",
-    caption: "Early build stage showing the mechanical assembly process with bearings, structural components, and precision fastening.",
+    caption: "Early build stage showing the mechanical assembly process with bearings to reduce friction on intake system, structural components, and precision fastening.",
   },
   {
     src: "/IMG_1293.jpg",
     alt: "Mecanum wheel assembly - Omni-directional wheel mechanism detail",
-    caption: "Close-up of the mecanum wheel assembly, showcasing the angled rollers that enable smooth omnidirectional movement on the competition field.",
+    caption: "Close-up of the framework, showcasing the foundation the robot was built on.",
   },
   {
     src: "/IMG_1303.JPG",
     alt: "Robot build stage - Structural components and assembly",
-    caption: "Mid-build stage displaying the robot's structural framework with VEX metal channels, gears, and chain drive systems.",
+    caption: "Mid-build stage displaying the robots intake system centered upon a 2400 RPM first stage, 4 point bracing that doubles as a chain tensioner, and piston mechanism to allow multi-disk maneuvers.",
   },
   {
     src: "/IMG_1304.JPG",
     alt: "Advanced robot build - Complex mechanical systems and pneumatics",
-    caption: "Advanced build phase featuring pneumatic cylinders, complex gear trains, and integrated mechanical systems for competition performance.",
+    caption: "Close-up of custom made tracking wheel housings that were mounted on hinges to allow contact to floor at all times.",
   },
   {
     src: "/IMG_1348.jpg",
     alt: "Competition robot - Completed robot on VEX Worlds field",
-    caption: "The fully assembled robot positioned on the VEX Worlds competition field, ready for competition matches.",
+    caption: "Complete drive train and catapult mechanism that allowed disc collection and scoring.",
   },
   {
     src: "/IMG_1385.jpg",
     alt: "Team photo - Team 6627A with championship robot",
-    caption: "Team 6627A members proudly displaying the championship robot at VEX Worlds 2023 after winning the Opportunity Division.",
+    caption: "Complete robot, ready to move onto programming testing for PID and odometry algorithms.",
   },
   {
     src: "/IMG_1666.JPG",
     alt: "Workspace organization - Robot parts and tools",
-    caption: "Organized workspace showing VEX Robotics components, tools, and equipment used during the build and competition preparation.",
+    caption: "Piston mechanism that allowed robot to adjust the distance at which discs were shot out of catapult.",
   },
   {
     src: "/IMG_1668.JPG",
     alt: "Robot detail - Close-up of mechanical components",
-    caption: "Detailed view of the robot's intricate mechanical components, wiring, and precision engineering that contributed to championship performance.",
+    caption: "Side view of piston mechanism that adjusted shooting distance of discs.",
   },
   {
     src: "/IMG_4329.jpg",
     alt: "Competition action - Robot during VEX Worlds competition",
-    caption: "Robot in action during a VEX Worlds competition match, demonstrating its capabilities on the competition field.",
+    caption: "Anodized aluminum casing that allowed for a sleek and lightweight design.",
   },
   {
     src: "/IMG_4881.jpg",
     alt: "Robot showcase - Additional competition and build photos",
-    caption: "Additional view of the robot showcasing its design features and competition-ready configuration.",
+    caption: "Post match photo with Team 6627A members and the championship robot.",
   },
 ];
 
@@ -75,4 +75,3 @@ export function ProjectGallery() {
     </div>
   );
 }
-
