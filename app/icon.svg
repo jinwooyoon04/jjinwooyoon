@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- JJY Logo - Stylized interconnected letters with sharp angles and curves -->
+  <g fill="#000000">
+    <!-- First J with extended tail -->
+    <path d="M 10 15 L 25 15 L 25 20 L 20 20 L 20 60 Q 20 70 15 75 Q 10 80 5 85 L 5 90 Q 10 85 15 80 Q 20 75 20 65 L 20 25 L 15 25 L 15 15 Z" />
+    <path d="M 5 85 L 180 85 L 180 90 L 5 90 Z" />
+    
+    <!-- Second J (integrated) -->
+    <path d="M 30 15 L 50 15 L 50 20 L 45 20 L 45 60 Q 45 70 40 75 Q 35 80 30 85 L 30 90 Q 35 85 40 80 Q 45 75 45 65 L 45 25 L 40 25 L 40 15 Z" />
+    
+    <!-- Y (integrated with second J) -->
+    <path d="M 55 15 L 75 15 L 75 40 L 85 40 L 85 15 L 95 15 L 95 50 Q 95 60 85 65 Q 75 70 65 70 Q 55 70 50 65 Q 45 60 45 50 L 45 40 L 55 40 L 55 50 Q 55 55 60 60 Q 65 65 70 65 Q 75 65 80 60 Q 85 55 85 50 L 85 25 L 75 25 L 75 40 Z" />
+  </g>
+</svg>
