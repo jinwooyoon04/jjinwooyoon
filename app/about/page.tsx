@@ -5,10 +5,10 @@ import { SkillBadge } from "@/components/skill-badge";
 
 const education = [
   {
-    degree: "Bachelor of Science in Electrical & Computer Engineering",
+    degree: "Bachelor of Science in Environmental Engineering",
     institution: "Cornell University",
     period: "2024 - 2027",
-    description: "Currently pursuing degree in Electrical & Computer Engineering",
+    description: "Currently trying to change my major to Electrical and Computer Engineering",
   },
   {
     degree: "University of California Irvine",

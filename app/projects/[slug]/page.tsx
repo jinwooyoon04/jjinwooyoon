@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProjectGallery } from "@/components/project-gallery";
+import { ProjectVideo } from "@/components/project-video";
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -138,6 +139,14 @@ export default async function ProjectDetailPage({
           <section className="mb-12">
             <h2 className="mb-6 text-2xl font-semibold">Project Gallery</h2>
             <ProjectGallery />
+          </section>
+        )}
+
+        {/* Video Section - For projects with video (like Promote Challenge) */}
+        {project.videoUrl && (
+          <section className="mb-12">
+            <h2 className="mb-6 text-2xl font-semibold">Video</h2>
+            <ProjectVideo videoUrl={project.videoUrl} title={project.title} />
           </section>
         )}
 

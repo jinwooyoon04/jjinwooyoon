@@ -17,6 +17,7 @@ export interface Project {
   problem?: string;
   solution?: string;
   whatILearned?: string[];
+  videoUrl?: string;
 }
 
 interface ProjectCardProps {
