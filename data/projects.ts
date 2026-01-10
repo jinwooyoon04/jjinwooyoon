@@ -60,6 +60,18 @@ export const projects: Project[] = [
     techStack: ["AutoDesk Inventor", "Fusion 360", "3D Design", "CAD", "Engineering"],
     slug: "3d-design-projects",
   },
+  {
+    id: "5",
+    title: "Speaker Project",
+    description: "blank",
+    category: ["Hardware"],
+    techStack: ["blank"],
+    slug: "speaker-project",
+    overview: "blank",
+    problem: "blank",
+    solution: "blank",
+    whatILearned: ["blank"],
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
