@@ -31,7 +31,13 @@ export default function CalendarPage() {
           </div>
 
           <Card className="overflow-hidden p-0">
-            <div className="relative w-full bg-[#2d4a6b]" style={{ paddingBottom: "75%" }}>
+            <div 
+              className="relative w-full bg-[#2d4a6b]" 
+              style={{ 
+                paddingBottom: "75%",
+                filter: "brightness(0.9) contrast(1.05)",
+              }}
+            >
               <iframe
                 src={GOOGLE_CALENDAR_EMBED_URL}
                 style={{
