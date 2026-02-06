@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
-import { getProjectBySlug } from "@/data/projects";
+import { ArrowLeft, ArrowRight, ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
+import { getProjectBySlug, projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,6 +21,11 @@ export default async function ProjectDetailPage({
   if (!project) {
     notFound();
   }
+
+  // Find current project index and get previous/next projects
+  const currentIndex = projects.findIndex((p) => p.slug === slug);
+  const previousProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
   return (
     <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
@@ -80,6 +85,22 @@ export default async function ProjectDetailPage({
           </div>
         )}
 
+        {/* Project Gallery Section - Only for VEX Worlds Championship */}
+        {project.slug === "vex-worlds-championship" && (
+          <section className="mb-12">
+            <h2 className="mb-6 text-2xl font-semibold">Project Gallery</h2>
+            <ProjectGallery />
+          </section>
+        )}
+
+        {/* Video Section - For projects with video (like Promote Challenge) */}
+        {project.videoUrl && (
+          <section className="mb-12">
+            <h2 className="mb-6 text-2xl font-semibold">Video</h2>
+            <ProjectVideo videoUrl={project.videoUrl} title={project.title} />
+          </section>
+        )}
+
         {/* Overview Section */}
         {project.overview && (
           <section className="mb-12">
@@ -134,22 +155,6 @@ export default async function ProjectDetailPage({
           </div>
         </section>
 
-        {/* Project Gallery Section - Only for VEX Worlds Championship */}
-        {project.slug === "vex-worlds-championship" && (
-          <section className="mb-12">
-            <h2 className="mb-6 text-2xl font-semibold">Project Gallery</h2>
-            <ProjectGallery />
-          </section>
-        )}
-
-        {/* Video Section - For projects with video (like Promote Challenge) */}
-        {project.videoUrl && (
-          <section className="mb-12">
-            <h2 className="mb-6 text-2xl font-semibold">Video</h2>
-            <ProjectVideo videoUrl={project.videoUrl} title={project.title} />
-          </section>
-        )}
-
         {/* What I Learned Section */}
         {project.whatILearned && project.whatILearned.length > 0 && (
           <section className="mb-12">
@@ -163,6 +168,41 @@ export default async function ProjectDetailPage({
                 </ul>
               </CardContent>
             </Card>
+          </section>
+        )}
+
+        {/* Project Navigation */}
+        {(previousProject || nextProject) && (
+          <section className="mb-12 mt-16 border-t pt-8">
+            <div className="flex items-center justify-between gap-4">
+              {previousProject ? (
+                <Button variant="outline" className="flex-1" asChild>
+                  <Link href={`/projects/${previousProject.slug}`}>
+                    <ChevronLeft className="mr-2 h-4 w-4" />
+                    <div className="flex flex-col items-start">
+                      <span className="text-xs text-muted-foreground">Previous Project</span>
+                      <span className="font-medium">{previousProject.title}</span>
+                    </div>
+                  </Link>
+                </Button>
+              ) : (
+                <div className="flex-1" />
+              )}
+              
+              {nextProject ? (
+                <Button variant="outline" className="flex-1" asChild>
+                  <Link href={`/projects/${nextProject.slug}`}>
+                    <div className="flex flex-col items-end">
+                      <span className="text-xs text-muted-foreground">Next Project</span>
+                      <span className="font-medium">{nextProject.title}</span>
+                    </div>
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              ) : (
+                <div className="flex-1" />
+              )}
+            </div>
           </section>
         )}
       </div>

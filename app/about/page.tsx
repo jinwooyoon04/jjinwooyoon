@@ -8,7 +8,7 @@ const education = [
     degree: "Bachelor of Science in Environmental Engineering",
     institution: "Cornell University",
     period: "2024 - 2027",
-    description: "Currently trying to change my major to Electrical and Computer Engineering",
+    description: "Pursuing a Degree in Environmental Engineering with background in Electrical and Computer Engineering",
   },
   {
     degree: "University of California Irvine",

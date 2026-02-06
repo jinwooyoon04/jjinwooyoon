@@ -50,6 +50,15 @@ export const projects: Project[] = [
     category: ["Software", "Hardware"],
     techStack: ["Curriculum Development", "Mentoring", "Python", "Robotics Education", "Leadership"],
     slug: "robotics-mentorship",
+    overview: "Worked with 100+ Orchard Hills Middle School students to prepare for the Vex Robotics Competition season. Facilitated scrimmages and traveled to signature events and world championships to assist students. Also worked with Tech X Robotics to develop a curriculum for students to learn robotics and prepare for the competitive season. During my personal competitive season, I frequently visited local middle and high schools to help students learn foundational skills for VEX robotics.",
+    problem: "The main problem I faced was that many students were not familiar with the basics of robotics and did not have the necessary skills to compete at a high level. I also faced the challenge of creating a curriculum that was both comprehensive and engaging for students.",
+    solution: "I created a curriculum that was both comprehensive and engaging for students. I also traveled to local middle and high schools to help students learn foundational skills for VEX robotics. I also worked with Tech X Robotics to develop a curriculum for students to learn robotics and prepare for the competitive season.",
+    whatILearned: [
+      "Curriculum Development",
+      "Mentoring",
+      "Python",
+      "Robotics Education",
+    ],
   },
   {
     id: "4",
